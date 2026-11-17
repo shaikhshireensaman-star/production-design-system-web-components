@@ -1,0 +1,57 @@
+{
+  "engine": "axe-core",
+  "version": "4.14.0",
+  "scope": "documented component catalog in three themes",
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "violationCount": 0,
+  "scans": [
+    {
+      "theme": "light",
+      "tokens": {
+        "primary": "#4f46e5",
+        "primaryText": "#ffffff",
+        "link": "#4338ca",
+        "linkColor": "rgb(67, 56, 202)",
+        "linkBackground": "#f8fafc",
+        "linkContrastRatio": 7.55,
+        "buttonBackground": "rgb(79, 70, 229)",
+        "buttonColor": "rgb(255, 255, 255)"
+      },
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "tokens": {
+        "primary": "#4f46e5",
+        "primaryText": "#ffffff",
+        "link": "#a5b4fc",
+        "linkColor": "rgb(165, 180, 252)",
+        "linkBackground": "#0f172a",
+        "linkContrastRatio": 8.96,
+        "buttonBackground": "rgb(79, 70, 229)",
+        "buttonColor": "rgb(255, 255, 255)"
+      },
+      "violations": []
+    },
+    {
+      "theme": "high-contrast",
+      "tokens": {
+        "primary": "#ffff00",
+        "primaryText": "#000000",
+        "link": "#ffff00",
+        "linkColor": "rgb(255, 255, 0)",
+        "linkBackground": "#000000",
+        "linkContrastRatio": 19.56,
+        "buttonBackground": "rgb(255, 255, 0)",
+        "buttonColor": "rgb(0, 0, 0)"
+      },
+      "violations": []
+    }
+  ],
+  "seriousOrCritical": []
+}

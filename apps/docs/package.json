@@ -1,0 +1,17 @@
+{
+  "name": "@production-design-system/docs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "pnpm --filter @production-design-system/components build && pnpm --filter @production-design-system/tokens build",
+    "dev": "vite --host 127.0.0.1",
+    "prebuild": "pnpm --filter @production-design-system/components build && pnpm --filter @production-design-system/tokens build",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@production-design-system/components": "workspace:*",
+    "@production-design-system/tokens": "workspace:*"
+  },
+  "devDependencies": { "vite": "^8.3.5" }
+}

@@ -1,0 +1,45 @@
+node_modules/
+**/node_modules/
+**/dist/
+coverage/
+**/.vite/
+*.tsbuildinfo
+*.log
+test-results/
+playwright-report/
+
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Lighthouse temporary data
+.lighthouseci/
+
+# Generated archives
+*.tgz
+*.zip
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Lighthouse temporary data
+.lighthouseci/
+
+# Generated archives
+*.tgz
+*.zip
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Local debug logs
+vitest-error.txt

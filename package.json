@@ -1,0 +1,40 @@
+{
+  "name": "production-design-system",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpm --filter @production-design-system/tokens build && pnpm --filter @production-design-system/components build && pnpm --filter @production-design-system/demo build && pnpm --filter @production-design-system/docs build && pnpm --filter @production-design-system/react-example build",
+    "typecheck": "pnpm --filter @production-design-system/components exec tsc --noEmit -p tsconfig.json && pnpm --filter @production-design-system/tokens exec tsc --noEmit -p tsconfig.json && pnpm --filter @production-design-system/demo exec tsc --noEmit -p tsconfig.json && pnpm --filter @production-design-system/docs exec tsc --noEmit -p tsconfig.json && pnpm --filter @production-design-system/react-example exec tsc --noEmit -p tsconfig.json && tsc --noEmit -p tests/tsconfig.json",
+    "test": "vitest run",
+    "test:browser": "playwright test",
+    "preperf:lighthouse": "pnpm build",
+    "perf:lighthouse": "lhci autorun",
+    "test:visual": "playwright test tests/browser/visual.spec.mjs --project=chromium",
+    "test:visual:update": "playwright test tests/browser/visual.spec.mjs --project=chromium --update-snapshots"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.16.1",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.16.1",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.11.0",
+    "@lhci/cli": "^0.16.0",
+    "@playwright/test": "^1.64.1",
+    "axe-core": "^4.14.0",
+    "jsdom": "^30.1.3",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.5",
+    "vitest": "^5.1.0"
+  },
+  "customElements": "packages/components/custom-elements.json"
+}

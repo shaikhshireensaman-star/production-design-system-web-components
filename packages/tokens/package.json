@@ -1,0 +1,16 @@
+{
+  "name": "@production-design-system/tokens",
+  "version": "0.1.0",
+  "description": "Design tokens and theme styles for the Production Design System",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./tokens.css": "./dist/tokens.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node scripts/generate-tokens.mjs"
+  }
+}

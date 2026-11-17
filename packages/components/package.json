@@ -1,0 +1,24 @@
+﻿
+{
+  "name": "@production-design-system/components",
+  "version": "0.1.0",
+  "description": "Framework-agnostic native Web Components for the Production Design System",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "customElements": "./custom-elements.json",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "custom-elements.json"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && cem analyze --globs \"src/**/*.ts\" --exclude \"src/**/*.worker.ts\" --outdir ."
+  }
+}

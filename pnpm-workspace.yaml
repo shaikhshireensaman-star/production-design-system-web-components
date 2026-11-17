@@ -1,0 +1,5 @@
+packages:
+  - "packages/*"
+  - "apps/*"
+allowBuilds:
+  rs-module-lexer: set this to true or false

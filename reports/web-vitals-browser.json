@@ -1,0 +1,204 @@
+{
+  "engine": "Chromium",
+  "metrics": [
+    {
+      "id": "v6-1794925524213-4723925294700",
+      "name": "CLS",
+      "value": 0.0005971005227830675,
+      "delta": 0.0005971005227830675,
+      "rating": "good",
+      "navigationType": "navigate"
+    },
+    {
+      "id": "v6-1794925524153-9871358764207",
+      "name": "LCP",
+      "value": 272,
+      "delta": 272,
+      "rating": "good",
+      "navigationType": "navigate"
+    },
+    {
+      "id": "v6-1794925524152-3171771007840",
+      "name": "INP",
+      "value": 40,
+      "delta": 40,
+      "rating": "good",
+      "navigationType": "navigate"
+    }
+  ],
+  "layoutShifts": [
+    {
+      "value": 0.0005971005227830675,
+      "sources": [
+        {
+          "selector": "",
+          "previousRect": {
+            "x": 174.28125,
+            "y": 713.421875,
+            "width": 291.546875,
+            "height": 6.578125,
+            "top": 713.421875,
+            "right": 465.828125,
+            "bottom": 720,
+            "left": 174.28125
+          },
+          "currentRect": {
+            "x": 250.78125,
+            "y": 713.421875,
+            "width": 219.171875,
+            "height": 6.578125,
+            "top": 713.421875,
+            "right": 469.953125,
+            "bottom": 720,
+            "left": 250.78125
+          }
+        },
+        {
+          "selector": "",
+          "previousRect": {
+            "x": 647.609375,
+            "y": 713.421875,
+            "width": 214.703125,
+            "height": 6.578125,
+            "top": 713.421875,
+            "right": 862.3125,
+            "bottom": 720,
+            "left": 647.609375
+          },
+          "currentRect": {
+            "x": 743.078125,
+            "y": 713.421875,
+            "width": 182.796875,
+            "height": 6.578125,
+            "top": 713.421875,
+            "right": 925.875,
+            "bottom": 720,
+            "left": 743.078125
+          }
+        },
+        {
+          "selector": "",
+          "previousRect": {
+            "x": 465.828125,
+            "y": 713.421875,
+            "width": 181.78125,
+            "height": 6.578125,
+            "top": 713.421875,
+            "right": 647.609375,
+            "bottom": 720,
+            "left": 465.828125
+          },
+          "currentRect": {
+            "x": 469.953125,
+            "y": 713.421875,
+            "width": 273.125,
+            "height": 6.578125,
+            "top": 713.421875,
+            "right": 743.078125,
+            "bottom": 720,
+            "left": 469.953125
+          }
+        },
+        {
+          "selector": "",
+          "previousRect": {
+            "x": 1048.0625,
+            "y": 713.421875,
+            "width": 179.75,
+            "height": 6.578125,
+            "top": 713.421875,
+            "right": 1227.8125,
+            "bottom": 720,
+            "left": 1048.0625
+          },
+          "currentRect": {
+            "x": 1038.125,
+            "y": 713.421875,
+            "width": 189.6875,
+            "height": 6.578125,
+            "top": 713.421875,
+            "right": 1227.8125,
+            "bottom": 720,
+            "left": 1038.125
+          }
+        },
+        {
+          "selector": "",
+          "previousRect": {
+            "x": 862.3125,
+            "y": 713.421875,
+            "width": 185.75,
+            "height": 6.578125,
+            "top": 713.421875,
+            "right": 1048.0625,
+            "bottom": 720,
+            "left": 862.3125
+          },
+          "currentRect": {
+            "x": 925.875,
+            "y": 713.421875,
+            "width": 112.25,
+            "height": 6.578125,
+            "top": 713.421875,
+            "right": 1038.125,
+            "bottom": 720,
+            "left": 925.875
+          }
+        }
+      ]
+    },
+    {
+      "value": 0.04707131629519993,
+      "sources": [
+        {
+          "node": "SECTION",
+          "selector": "section",
+          "previousRect": {
+            "x": 51.1875,
+            "y": 333.046875,
+            "width": 1177.625,
+            "height": 38,
+            "top": 333.046875,
+            "right": 1228.8125,
+            "bottom": 371.046875,
+            "left": 51.1875
+          },
+          "currentRect": {
+            "x": 51.1875,
+            "y": 652.15625,
+            "width": 1177.625,
+            "height": 38,
+            "top": 652.15625,
+            "right": 1228.8125,
+            "bottom": 690.15625,
+            "left": 51.1875
+          }
+        },
+        {
+          "node": "FOOTER",
+          "selector": "footer",
+          "previousRect": {
+            "x": 0,
+            "y": 496.234375,
+            "width": 1280,
+            "height": 66,
+            "top": 496.234375,
+            "right": 1280,
+            "bottom": 562.234375,
+            "left": 0
+          },
+          "currentRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        }
+      ]
+    }
+  ]
+}

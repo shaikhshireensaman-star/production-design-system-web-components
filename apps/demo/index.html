@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A booking operations dashboard built with the Production Design System Web Components." />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>Reservations · Northstar</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Northstar home"><span class="brand-mark">N</span> Northstar <span class="brand-muted">STAYS</span></a>
+      <nav aria-label="Main navigation"><a href="#reservations" aria-current="page">Reservations</a><a href="#guests">Guests</a><a href="#reports">Reports</a></nav>
+      <label class="theme-label" for="theme-picker">Theme</label>
+      <select id="theme-picker" aria-label="Choose color theme"><option value="light">Light</option><option value="dark">Dark</option><option value="high-contrast">High contrast</option></select>
+    </header>
+    <main id="home">
+      <section class="welcome">
+        <div><p class="eyebrow">MONDAY, NOVEMBER 2, 2026</p><h1>Good morning, Shireen</h1><p>Here’s what’s happening with your properties today.</p></div>
+        <pds-button id="new-reservation">＋ New reservation</pds-button>
+      </section>
+      <section class="metrics" aria-label="Reservation overview">
+        <pds-card title="Arrivals today"><strong>24</strong><span class="metric-note">Across 3 properties</span></pds-card>
+        <pds-card title="Occupancy"><strong>86%</strong><span class="metric-note">↑ 4% this week</span></pds-card>
+        <pds-card title="Guest satisfaction"><strong>4.8 <span aria-hidden="true">★</span></strong><span class="metric-note">From 328 recent stays</span></pds-card>
+      </section>
+      <section id="reservations" class="reservations">
+        <div class="section-heading"><div><p class="eyebrow">PROPERTY OPERATIONS</p><h2>Recent reservations</h2><p>Live reservation feed · 50,000 demo records</p></div><pds-badge variant="success" label="LIVE FEED"></pds-badge></div>
+        <pds-data-table id="orders-table" src="/mock/orders.ndjson"></pds-data-table>
+      </section>
+      <section class="details-grid">
+        <pds-card title="Guest preferences"><p>Help us tailor the next stay.</p><form id="preferences"><pds-text-field label="Guest name" name="guest" placeholder="e.g. Jordan Lee" required></pds-text-field><pds-select label="Room preference" name="room" options='[{"label":"King bed","value":"king"},{"label":"Twin beds","value":"twin"},{"label":"Accessible room","value":"accessible"}]'></pds-select><pds-switch label="Send arrival updates" name="updates" checked></pds-switch><pds-button type="submit">Save preferences</pds-button></form><pds-toast id="saved-toast" message="Guest preferences saved." duration="3500"></pds-toast></pds-card>
+        <pds-card title="Team notes"><pds-tabs selected="0"><span slot="tab">Today</span><span slot="tab">This week</span><p slot="panel">The Cedar House pool reopens at 2 PM. Notify arriving families.</p><p slot="panel">Three guest anniversaries are coming up this week.</p></pds-tabs><pds-rating label="Rate this dashboard" value="4"></pds-rating><pds-menu><span slot="trigger">More actions ▾</span><button slot="item" type="button">Export reservations</button><button slot="item" type="button">Manage properties</button></pds-menu></pds-card>
+      </section>
+      <section class="component-examples" aria-label="Design system component examples">
+        <details><summary>Explore the component library</summary>
+          <pds-alert variant="info" title="Booking support" message="Our guest support team is available around the clock."></pds-alert>
+          <pds-checkbox label="I have reviewed the guest notes" name="reviewed"></pds-checkbox>
+          <pds-radio-group label="Contact method" name="contact" options='[{"label":"Email","value":"email"},{"label":"Phone","value":"phone"}]'></pds-radio-group>
+          <pds-badge variant="neutral" label="All 15 custom elements are active"></pds-badge>
+          <pds-button variant="secondary" id="open-details">Open reservation details</pds-button>
+        </details>
+      </section>
+      <pds-dialog id="reservation-dialog" title="New reservation"><div id="reservation-detail"><p>Choose an order to see its reservation details.</p></div><span slot="footer">This demo keeps all information on your device.</span></pds-dialog>
+    </main>
+    <footer>Northstar Stays · Operations dashboard demo</footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
