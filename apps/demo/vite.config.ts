@@ -1,3 +1,4 @@
+
 import { defineConfig } from "vite";
 
 const securityHeaders = {
@@ -9,6 +10,7 @@ const securityHeaders = {
 };
 
 export default defineConfig({
+  base: "/production-design-system-web-components/",
   preview: { headers: securityHeaders },
   plugins: [{
     name: "mock-streaming-orders",
@@ -38,6 +40,7 @@ export default defineConfig({
         };
         batch();
       });
+
       server.middlewares.use("/mock/slow-orders.ndjson", (request, response, next) => {
         if (request.method !== "GET") { next(); return; }
         response.statusCode = 200;
@@ -50,7 +53,14 @@ export default defineConfig({
           if (response.destroyed) return;
           const end = Math.min(index + 100, 50_000);
           for (; index < end; index++) {
-            response.write(`${JSON.stringify({ id: `SLOW-${index + 1}`, customer: `Guest ${index + 1}`, item: "Test", status: "Pending", total: index, date: "2026-01-01" })}\n`);
+            response.write(`${JSON.stringify({
+              id: `SLOW-${index + 1}`,
+              customer: `Guest ${index + 1}`,
+              item: "Test",
+              status: "Pending",
+              total: index,
+              date: "2026-01-01"
+            })}\n`);
           }
           if (index >= 50_000) response.end();
           else timer = setTimeout(batch, 200);

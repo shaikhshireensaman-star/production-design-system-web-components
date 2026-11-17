@@ -1257,6 +1257,231 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/radio-group/pds-radio-group.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "PdsRadioGroup",
+          "members": [
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "type": {
+                "text": "ElementInternals"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "fieldset",
+              "type": {
+                "text": "HTMLFieldSetElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "legend",
+              "type": {
+                "text": "HTMLLegendElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "optionsContainer",
+              "type": {
+                "text": "HTMLDivElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "error",
+              "type": {
+                "text": "HTMLSpanElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "selectedValue",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "\"\""
+            },
+            {
+              "kind": "field",
+              "name": "formDisabled",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "getOptions",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "RadioOption[]"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "updateRadioGroup",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "updateFormValue",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "formResetCallback",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "formDisabledCallback",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "disabled",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "formStateRestoreCallback",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "state",
+                  "type": {
+                    "text": "string | File | FormData | null"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "adoptedStyleSheets",
+              "type": {
+                "text": "array"
+              },
+              "default": "[radioGroupStyles]"
+            },
+            {
+              "kind": "field",
+              "name": "className",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"options\""
+            },
+            {
+              "kind": "field",
+              "name": "id",
+              "default": "`pds-radio-group-${++nextRadioGroupId}-error`"
+            }
+          ],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "label"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "options"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "required"
+            },
+            {
+              "name": "disabled"
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "pds-radio-group",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PdsRadioGroup",
+          "declaration": {
+            "name": "PdsRadioGroup",
+            "module": "src/radio-group/pds-radio-group.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "pds-radio-group",
+          "declaration": {
+            "name": "PdsRadioGroup",
+            "module": "src/radio-group/pds-radio-group.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/rating/pds-rating.ts",
       "declarations": [
         {
@@ -1556,93 +1781,42 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/radio-group/pds-radio-group.ts",
+      "path": "src/tabs/pds-tabs.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "PdsRadioGroup",
+          "name": "PdsTabs",
           "members": [
             {
               "kind": "field",
-              "name": "formAssociated",
+              "name": "root",
               "type": {
-                "text": "boolean"
-              },
-              "static": true,
-              "default": "true"
-            },
-            {
-              "kind": "field",
-              "name": "internals",
-              "type": {
-                "text": "ElementInternals"
+                "text": "ShadowRoot"
               },
               "privacy": "private"
             },
             {
               "kind": "field",
-              "name": "fieldset",
+              "name": "tabs",
               "type": {
-                "text": "HTMLFieldSetElement"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "legend",
-              "type": {
-                "text": "HTMLLegendElement"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "optionsContainer",
-              "type": {
-                "text": "HTMLDivElement"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "error",
-              "type": {
-                "text": "HTMLSpanElement"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "selectedValue",
-              "type": {
-                "text": "string"
+                "text": "HTMLButtonElement[]"
               },
               "privacy": "private",
-              "default": "\"\""
+              "default": "[]"
             },
             {
               "kind": "field",
-              "name": "formDisabled",
+              "name": "panels",
               "type": {
-                "text": "boolean"
+                "text": "HTMLElement[]"
               },
               "privacy": "private",
-              "default": "false"
+              "default": "[]"
             },
             {
               "kind": "method",
-              "name": "getOptions",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "RadioOption[]"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "updateRadioGroup",
+              "name": "render",
               "privacy": "private",
               "return": {
                 "type": {
@@ -1652,26 +1826,8 @@
             },
             {
               "kind": "method",
-              "name": "updateFormValue",
+              "name": "select",
               "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "formResetCallback",
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "formDisabledCallback",
               "return": {
                 "type": {
                   "text": "void"
@@ -1679,26 +1835,9 @@
               },
               "parameters": [
                 {
-                  "name": "disabled",
+                  "name": "index",
                   "type": {
-                    "text": "boolean"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "formStateRestoreCallback",
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "state",
-                  "type": {
-                    "text": "string | File | FormData | null"
+                    "text": "number"
                   }
                 }
               ]
@@ -1709,72 +1848,44 @@
               "type": {
                 "text": "array"
               },
-              "default": "[radioGroupStyles]"
-            },
-            {
-              "kind": "field",
-              "name": "className",
-              "type": {
-                "text": "string"
-              },
-              "default": "\"options\""
-            },
-            {
-              "kind": "field",
-              "name": "id",
-              "default": "`pds-radio-group-${++nextRadioGroupId}-error`"
+              "default": "[styles]"
             }
           ],
           "events": [
             {
-              "name": "change",
+              "name": "pds-tab-change",
               "type": {
-                "text": "Event"
+                "text": "CustomEvent"
               }
             }
           ],
           "attributes": [
             {
-              "name": "label"
-            },
-            {
-              "name": "name"
-            },
-            {
-              "name": "options"
-            },
-            {
-              "name": "value"
-            },
-            {
-              "name": "required"
-            },
-            {
-              "name": "disabled"
+              "name": "selected"
             }
           ],
           "superclass": {
             "name": "HTMLElement"
           },
-          "tagName": "pds-radio-group",
+          "tagName": "pds-tabs",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "PdsRadioGroup",
+          "name": "PdsTabs",
           "declaration": {
-            "name": "PdsRadioGroup",
-            "module": "src/radio-group/pds-radio-group.ts"
+            "name": "PdsTabs",
+            "module": "src/tabs/pds-tabs.ts"
           }
         },
         {
           "kind": "custom-element-definition",
-          "name": "pds-radio-group",
+          "name": "pds-tabs",
           "declaration": {
-            "name": "PdsRadioGroup",
-            "module": "src/radio-group/pds-radio-group.ts"
+            "name": "PdsTabs",
+            "module": "src/tabs/pds-tabs.ts"
           }
         }
       ]
@@ -1969,267 +2080,6 @@
           "declaration": {
             "name": "PdsSwitch",
             "module": "src/switch/pds-switch.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/tabs/pds-tabs.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "PdsTabs",
-          "members": [
-            {
-              "kind": "field",
-              "name": "root",
-              "type": {
-                "text": "ShadowRoot"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "tabs",
-              "type": {
-                "text": "HTMLButtonElement[]"
-              },
-              "privacy": "private",
-              "default": "[]"
-            },
-            {
-              "kind": "field",
-              "name": "panels",
-              "type": {
-                "text": "HTMLElement[]"
-              },
-              "privacy": "private",
-              "default": "[]"
-            },
-            {
-              "kind": "method",
-              "name": "render",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "select",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "index",
-                  "type": {
-                    "text": "number"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "field",
-              "name": "adoptedStyleSheets",
-              "type": {
-                "text": "array"
-              },
-              "default": "[styles]"
-            }
-          ],
-          "events": [
-            {
-              "name": "pds-tab-change",
-              "type": {
-                "text": "CustomEvent"
-              }
-            }
-          ],
-          "attributes": [
-            {
-              "name": "selected"
-            }
-          ],
-          "superclass": {
-            "name": "HTMLElement"
-          },
-          "tagName": "pds-tabs",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "PdsTabs",
-          "declaration": {
-            "name": "PdsTabs",
-            "module": "src/tabs/pds-tabs.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "pds-tabs",
-          "declaration": {
-            "name": "PdsTabs",
-            "module": "src/tabs/pds-tabs.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/toast/pds-toast.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "PdsToast",
-          "members": [
-            {
-              "kind": "field",
-              "name": "root",
-              "type": {
-                "text": "ShadowRoot"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "box",
-              "type": {
-                "text": "HTMLDivElement"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "message",
-              "type": {
-                "text": "HTMLSpanElement"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "timer",
-              "type": {
-                "text": "number | undefined"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "show",
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "dismiss",
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "sync",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              }
-            },
-            {
-              "kind": "field",
-              "name": "adoptedStyleSheets",
-              "type": {
-                "text": "array"
-              },
-              "default": "[styles]"
-            },
-            {
-              "kind": "field",
-              "name": "className",
-              "type": {
-                "text": "string"
-              },
-              "default": "\"message\""
-            },
-            {
-              "kind": "field",
-              "name": "type",
-              "type": {
-                "text": "string"
-              },
-              "default": "\"button\""
-            },
-            {
-              "kind": "field",
-              "name": "textContent",
-              "type": {
-                "text": "string"
-              },
-              "default": "\"Dismiss\""
-            }
-          ],
-          "events": [
-            {
-              "name": "pds-dismiss",
-              "type": {
-                "text": "Event"
-              }
-            }
-          ],
-          "attributes": [
-            {
-              "name": "open"
-            },
-            {
-              "name": "message"
-            },
-            {
-              "name": "duration"
-            },
-            {
-              "name": "type"
-            }
-          ],
-          "superclass": {
-            "name": "HTMLElement"
-          },
-          "tagName": "pds-toast",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "PdsToast",
-          "declaration": {
-            "name": "PdsToast",
-            "module": "src/toast/pds-toast.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "pds-toast",
-          "declaration": {
-            "name": "PdsToast",
-            "module": "src/toast/pds-toast.ts"
           }
         }
       ]
@@ -2438,6 +2288,156 @@
           "declaration": {
             "name": "PdsTextField",
             "module": "src/text-field/pds-text-field.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/toast/pds-toast.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "PdsToast",
+          "members": [
+            {
+              "kind": "field",
+              "name": "root",
+              "type": {
+                "text": "ShadowRoot"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "box",
+              "type": {
+                "text": "HTMLDivElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "message",
+              "type": {
+                "text": "HTMLSpanElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "timer",
+              "type": {
+                "text": "number | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "show",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "dismiss",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "sync",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "adoptedStyleSheets",
+              "type": {
+                "text": "array"
+              },
+              "default": "[styles]"
+            },
+            {
+              "kind": "field",
+              "name": "className",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"message\""
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"button\""
+            },
+            {
+              "kind": "field",
+              "name": "textContent",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Dismiss\""
+            }
+          ],
+          "events": [
+            {
+              "name": "pds-dismiss",
+              "type": {
+                "text": "Event"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "open"
+            },
+            {
+              "name": "message"
+            },
+            {
+              "name": "duration"
+            },
+            {
+              "name": "type"
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "pds-toast",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PdsToast",
+          "declaration": {
+            "name": "PdsToast",
+            "module": "src/toast/pds-toast.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "pds-toast",
+          "declaration": {
+            "name": "PdsToast",
+            "module": "src/toast/pds-toast.ts"
           }
         }
       ]
