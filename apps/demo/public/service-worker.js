@@ -1,29 +1,42 @@
 const CACHE_PREFIX = "northstar-demo-";
-const CACHE = `${CACHE_PREFIX}v3`;
+const CACHE = `${CACHE_PREFIX}v4`;
 
-const BASE_URL = self.location.pathname.replace(/service-worker\.js$/, "");
-const SHELL_URL = new URL("./", self.location).href;
+// Use the actual GitHub Pages project scope
+const SHELL_URL = self.registration.scope;
 
 self.addEventListener("install", event => {
   event.waitUntil(
-    caches.open(CACHE).then(async cache => {
-      await cache.add(SHELL_URL);
+    (async () => {
+      const cache = await caches.open(CACHE);
+
+      try {
+        const response = await fetch(SHELL_URL);
+
+        if (response.ok) {
+          await cache.put(SHELL_URL, response);
+        }
+      } catch (error) {
+        console.warn("Shell caching failed:", error);
+      }
+
       await self.skipWaiting();
-    })
+    })()
   );
 });
 
 self.addEventListener("activate", event => {
   event.waitUntil(
-    caches.keys()
-      .then(keys =>
-        Promise.all(
-          keys
-            .filter(key => key.startsWith(CACHE_PREFIX) && key !== CACHE)
-            .map(key => caches.delete(key))
-        )
-      )
-      .then(() => self.clients.claim())
+    (async () => {
+      const keys = await caches.keys();
+
+      await Promise.all(
+        keys
+          .filter(key => key.startsWith(CACHE_PREFIX) && key !== CACHE)
+          .map(key => caches.delete(key))
+      );
+
+      await self.clients.claim();
+    })()
   );
 });
 
@@ -34,7 +47,8 @@ self.addEventListener("fetch", event => {
   if (
     request.method !== "GET" ||
     url.origin !== self.location.origin ||
-    request.headers.has("authorization")
+    request.headers.has("authorization") ||
+    !url.href.startsWith(self.registration.scope)
   ) {
     return;
   }
@@ -51,7 +65,8 @@ self.addEventListener("fetch", event => {
         const response = await fetch(request);
 
         if (response.ok && response.type === "basic") {
-          const cacheControl = response.headers.get("cache-control") ?? "";
+          const cacheControl =
+            response.headers.get("cache-control") ?? "";
 
           if (!/\b(?:no-store|private)\b/i.test(cacheControl)) {
             const cache = await caches.open(CACHE);
@@ -60,10 +75,12 @@ self.addEventListener("fetch", event => {
         }
 
         return response;
-      } catch {
+      } catch (error) {
         const cachedResponse = await caches.match(request);
 
-        if (cachedResponse) return cachedResponse;
+        if (cachedResponse) {
+          return cachedResponse;
+        }
 
         if (request.mode === "navigate") {
           return (await caches.match(SHELL_URL)) ?? Response.error();
