@@ -26,7 +26,7 @@
       </section>
       <section id="reservations" class="reservations">
         <div class="section-heading"><div><p class="eyebrow">PROPERTY OPERATIONS</p><h2>Recent reservations</h2><p>Live reservation feed · 50,000 demo records</p></div><pds-badge variant="success" label="LIVE FEED"></pds-badge></div>
-        <pds-data-table id="orders-table" src="/mock/orders.ndjson"></pds-data-table>
+        <pds-data-table id="orders-table" src="./mock/orders.ndjson"></pds-data-table>
       </section>
       <section class="details-grid">
         <pds-card title="Guest preferences"><p>Help us tailor the next stay.</p><form id="preferences"><pds-text-field label="Guest name" name="guest" placeholder="e.g. Jordan Lee" required></pds-text-field><pds-select label="Room preference" name="room" options='[{"label":"King bed","value":"king"},{"label":"Twin beds","value":"twin"},{"label":"Accessible room","value":"accessible"}]'></pds-select><pds-switch label="Send arrival updates" name="updates" checked></pds-switch><pds-button type="submit">Save preferences</pds-button></form><pds-toast id="saved-toast" message="Guest preferences saved." duration="3500"></pds-toast></pds-card>
