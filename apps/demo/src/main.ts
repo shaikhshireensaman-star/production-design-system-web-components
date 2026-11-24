@@ -40,7 +40,10 @@ document.querySelector<HTMLFormElement>("#preferences")?.addEventListener("submi
   event.preventDefault();
   document.querySelector<HTMLElement & { show(): void }>("#saved-toast")?.show();
 });
-
 if ("serviceWorker" in navigator && import.meta.env.PROD) {
-  window.addEventListener("load", () => { void navigator.serviceWorker.register("/service-worker.js"); });
+  window.addEventListener("load", () => {
+    void navigator.serviceWorker.register(
+      `${import.meta.env.BASE_URL}service-worker.js`
+    );
+  });
 }
